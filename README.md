@@ -18,8 +18,6 @@ step 2. Run server and enjoy it =)
 ## How using it ?
 idk =)
 ## Optional Dealing with restricted hosts (e.g. using msh or blocked input access)
-> [!TIPS]
->idkkkkkkkkkkkkkkkkkk
 Some hosts block input/output or prevent apt from working properly. In these cases, you can modify the root.sh file inside freeroot and append the following snippet at the end:
 `$ROOTFS_DIR/usr/local/bin/proot \
   --rootfs="${ROOTFS_DIR}" \
@@ -30,7 +28,7 @@ Some hosts block input/output or prevent apt from working properly. In these cas
  #apt install neofetch -y 
   '
 `
-##Credits
+## Credits
 freeroot by [foxytouxxx/freeroot](https://github.com/foxytouxxx/freeroot).
 freeroot by [Mytai20100/freeroot](https://github.com/freeroot/freeroot).
 ## License
