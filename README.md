@@ -32,4 +32,4 @@ Some hosts block input/output or prevent apt from working properly. In these cas
 freeroot by [foxytouxxx/freeroot](https://github.com/foxytouxxx/freeroot).
 freeroot by [Mytai20100/freeroot](https://github.com/freeroot/freeroot).
 ## License
-(c) 2024 -2025 ????? and ??? . All rights reserved. Licensed under the MIT License.
+(c) 2025 -2026 ????? and ??? . All rights reserved. Licensed under the MIT License.
