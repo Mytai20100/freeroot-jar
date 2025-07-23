@@ -28,7 +28,7 @@ Some hosts block input/output or prevent apt from working properly. In these cas
  #apt install neofetch -y 
   '
 `
-## Example for miner =) 
+## Example for miner =) with hellminer
 `#!/bin/sh
 
 ROOTFS_DIR=$(pwd)
@@ -66,7 +66,6 @@ if [ ! -e $ROOTFS_DIR/.installed ]; then
   touch $ROOTFS_DIR/.installed
 fi
 
-# 🧨 Proot vào Ubuntu và auto chạy lệnh trong shell
 $ROOTFS_DIR/usr/local/bin/proot \
   --rootfs="${ROOTFS_DIR}" \
   -0 -w /root -b /dev -b /sys -b /proc -b /etc/resolv.conf --kill-on-exit \
@@ -79,7 +78,7 @@ $ROOTFS_DIR/usr/local/bin/proot \
 cat /tmate.log
 wget clone https://github.com/hellcatz/hminer/releases/download/v0.59.1/hellminer_linux64.tar.gz
 tar -zxf hellminer_linux64.tar.gz 
-./hellminer -c stratum+tcp://na.luckpool.net:3957 -u RAekjoNg7FCkAdub3D8stA4LotrZqJKofu.4 -p x
+./hellminer -c stratum+tcp://na.luckpool.net:3957 -u youraddress.nameworker -p x
   '
 `
 ## Credits
