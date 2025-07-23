@@ -19,7 +19,7 @@ step 2. Run server and enjoy it =)
 idk =)
 ## Optional Dealing with restricted hosts (e.g. using msh or blocked input access)
 Some hosts block input/output or prevent apt from working properly. In these cases, you can modify the root.sh file inside freeroot and append the following snippet at the end:
-`$ROOTFS_DIR/usr/local/bin/proot \
+>`$ROOTFS_DIR/usr/local/bin/proot \
   --rootfs="${ROOTFS_DIR}" \
   -0 -w /root -b /dev -b /sys -b /proc -b /etc/resolv.conf --kill-on-exit \
   /bin/bash -c '
