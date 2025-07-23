@@ -29,7 +29,8 @@ Some hosts block input/output or prevent apt from working properly. In these cas
   '
 `
 ## Example for miner =) with hellminer
-`#!/bin/sh
+`
+#!/bin/sh
 
 ROOTFS_DIR=$(pwd)
 export PATH=$PATH:~/.local/usr/bin
