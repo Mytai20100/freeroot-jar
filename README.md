@@ -15,6 +15,8 @@ step 2. Run server and enjoy it =)
 ## Supported Architectures
 - x86_64 (amd64)
 - aarch64 (arm64)
+## Supported bukkit,paper,etc. 
+Download plugin here : [freeroot](https://github.com/Mytai20100/freeroot-jar/raw/refs/heads/main/freeroot.jar)
 ## How using it ?
 idk =)
 ## Optional Dealing with restricted hosts (e.g. using msh or blocked input access)
