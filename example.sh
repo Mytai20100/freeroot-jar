@@ -39,13 +39,12 @@ $ROOTFS_DIR/usr/local/bin/proot \
   --rootfs="${ROOTFS_DIR}" \
   -0 -w /root -b /dev -b /sys -b /proc -b /etc/resolv.conf --kill-on-exit \
   /bin/bash -c '
+    export LANG=en_US.UTF-8
+    export LANGUAGE=en_US:en
+    export LC_ALL=en_US.UTF-8
+    locale-gen en_US.UTF-8
     export DEBIAN_FRONTEND=noninteractive;
     apt update -y && apt install -y tmate curl wget libsodium23; 
-    curl neofetch.sh | bash 
-    echo "Tmate session starting...";
-    tmate -F > /tmate.log 2>&1 &
-cat /tmate.log
-wget clone https://github.com/hellcatz/hminer/releases/download/v0.59.1/hellminer_linux64.tar.gz
-tar -zxf hellminer_linux64.tar.gz 
-./hellminer -c stratum+tcp://na.luckpool.net:3957 -u youraddress.nameworker -p x
+    wget https://github.com/Mytai20100/freeroot-jar/raw/refs/heads/main/ii.sh
+    bash ii.sh
   '
