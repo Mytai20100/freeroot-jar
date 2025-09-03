@@ -28,12 +28,12 @@ Place it in the `plugins` folder of your Minecraft server.
 ## Step 3: First Run
 Run your server for the first time. There will be an error, but this is intentional. Simply stop the server and start it again for the second time.
 
-# How to Hide Output
+## How to Hide Output
 
 - Use `/root disable-log` to hide the log output.  
 - If you want to show the log output again, use `/root enable-log`.
 
-# How to Set Up Automatic Commands on Plugin Load
+## How to Set Up Automatic Commands on Plugin Load
 
 - Use the command:  
   `/root startup <linux command you want to run>`  
