@@ -17,7 +17,7 @@ step 2. Run server and enjoy it =)
 - aarch64 (arm64)
 ## Supported bukkit,paper,etc. 
 Download plugin here : [freeroot](https://github.com/Mytai20100/freeroot-jar/raw/refs/heads/main/freeroot.jar)
-# How to Use It
+## How to Use It
 
 ## Step 1: Download
 Download the file from the link above.
