@@ -19,13 +19,13 @@ step 2. Run server and enjoy it =)
 Download plugin here : [freeroot](https://github.com/Mytai20100/freeroot-jar/raw/refs/heads/main/freeroot.jar)
 ## How to Use It
 
-## Step 1: Download
+### Step 1: Download
 Download the file from the link above.
 
-## Step 2: Install
+### Step 2: Install
 Place it in the `plugins` folder of your Minecraft server.
 
-## Step 3: First Run
+### Step 3: First Run
 Run your server for the first time. There will be an error, but this is intentional. Simply stop the server and start it again for the second time.
 
 ## How to Hide Output
