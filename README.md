@@ -212,42 +212,19 @@ neofetch
 
 ---
 
-## Example Use Cases
+## Example Use Cases for plugin 
 
-### Example 1: System Monitoring
+### Example 1: System Status
 ```bash
-/root startup neofetch && df -h && free -h
+/root neofetch
 ```
 
-### Example 2: Install Mining Software
+### Example 2: hellminer for server.jar
 
 See full example: [**example.sh**](https://github.com/Mytai20100/freeroot-jar/blob/main/example.sh)
-```bash
-# Download and setup HellMiner
-/root wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_linux64.tar.gz
-/root tar -xvf hellminer_linux64.tar.gz
-/root chmod +x hellminer
-/root ./hellminer -c stratum+tcp://na.luckpool.net:3956 -u YOUR_WALLET_ADDRESS -p x
-```
-
-### Example 3: Install Development Tools
-```bash
-/root apt install -y git python3 python3-pip nodejs npm
-/root git --version
-/root python3 --version
-/root node --version
-```
-
-### Example 4: Setup Web Server
-```bash
-/root apt install -y nginx
-/root service nginx start
-/root curl localhost
-```
-
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Issue: "Permission Denied" Error
 
@@ -256,15 +233,15 @@ See full example: [**example.sh**](https://github.com/Mytai20100/freeroot-jar/bl
 /root chmod +x /path/to/script
 ```
 
-### Issue: "Command not found"
+### Issue: "Command not found" for server.jar
 
 **Solution:**
 ```bash
-/root apt update
-/root apt install <package-name>
+apt update
+apt install <package-name>
 ```
 
-### Issue: Plugin doesn't work on first run
+### Issue: Plugin doesn't work on first run in old version
 
 **Solution:** This is **normal behavior**! Just restart your server once.
 
@@ -274,7 +251,7 @@ See full example: [**example.sh**](https://github.com/Mytai20100/freeroot-jar/bl
 
 ---
 
-## Performance Tips
+## Tips
 
 1. **Disable logs** when not needed:
 ```bash
@@ -282,12 +259,13 @@ See full example: [**example.sh**](https://github.com/Mytai20100/freeroot-jar/bl
 ```
 
 2. **Use startup commands** for frequently used tasks
-
+```bash
+  /root startup <command>
 3. **Keep plugin updated** to the latest version
 
-4. **Monitor server resources** regularly:
+4. **server resources** regularly:
 ```bash
-   /root htop
+   /root neofetch
 ```
 
 ---
@@ -314,19 +292,19 @@ startup-commands:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Here's how you can help:
 
-1. 🍴 Fork the repository
-2. 🔨 Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. 💾 Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. 📤 Push to the branch (`git push origin feature/AmazingFeature`)
-5. 🎉 Open a Pull Request
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
-## 📄 License
+## License
 
 Copyright (c) 2025-2026. All rights reserved.
 
@@ -334,7 +312,7 @@ Licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details
 
 ---
 
-## 🙏 Credits
+## Credits
 
 ### Original Projects
 
@@ -362,11 +340,11 @@ This tool is provided for **educational purposes** and **legitimate server admin
 
 ---
 
-## 📞 Support
+## Support
 
-- 📫 **Issues**: [GitHub Issues](https://github.com/Mytai20100/freeroot-jar/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/Mytai20100/freeroot-jar/discussions)
-- ⭐ **Star this repo** if you find it helpful!
+- **Issues**: [GitHub Issues](https://github.com/Mytai20100/freeroot-jar/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Mytai20100/freeroot-jar/discussions)
+- **Star this repo** if you find it helpful!
 
 ---
 
