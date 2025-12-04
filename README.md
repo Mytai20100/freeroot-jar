@@ -1,4 +1,4 @@
-# FreeRoot.jar - Minecraft Server Root Access Bypass in any hosting
+# FreeRoot-jar - Minecraft Server Root Access Bypass in any hosting
 
 <div align="center">
 
@@ -358,6 +358,6 @@ This tool is provided for **educational purposes** and **legitimate server admin
 
 ---
 
-**Server Version 1.5** | **Plugin Version 1.0**
+**Server Version 1.0** | **Plugin Version 1.5**
 
 </div>
