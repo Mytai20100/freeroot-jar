@@ -1,5 +1,7 @@
 # FreeRoot-jar - Minecraft Server Root Access Bypass in any hosting
-
+<p align="center">
+  <img src="https://github.com/Mytai20100/freeroot-jar/blob/main/freeroot.png" alt="Logo freeroot" width="400"/>
+</p>
 <div align="center">
 
 ![Server Version](https://img.shields.io/badge/server-1.5-brightgreen.svg)
@@ -36,19 +38,18 @@ FreeRoot.jar is a powerful tool that allows you to bypass Minecraft hosting rest
 - **Log Management**: Hide/show command output logs
 - **Startup Commands**: Auto-execute commands on plugin load
 - **Restricted Host Support**: Works even on heavily restricted hosting environments
-- **Persistent Configuration**: Save your settings in config.yml
 
 ---
 
-## 📋 Prerequisites
+##  Prerequisites
 
 Before using FreeRoot.jar, ensure you have:
 
-- ✅ Bash shell environment
-- ✅ Internet connectivity
-- ✅ Wget installed
-- ✅ Supported CPU architecture: **x86_64 (amd64)** or **aarch64 (arm64)**
-- ✅ Minecraft server (Bukkit/Paper/Spigot compatible)
+- ✓ Bash shell environment
+- ✓ Internet connectivity
+- ✓ Wget installed
+- ✓ Supported CPU architecture: **x86_64 (amd64)** or **aarch64 (arm64)**
+- ✓ Minecraft server (Bukkit/Paper/Spigot compatible)
 
 ---
 
@@ -68,7 +69,7 @@ Or download manually: [**Download server.jar**](https://github.com/Mytai20100/fr
 java -Xmx1024M -Xms512M -jar server.jar nogui
 ```
 
-**That's it!** Enjoy your root access 🎉
+**That's it!** Enjoy your root access
 
 ---
 
@@ -97,7 +98,7 @@ Or download manually: [**Download freeroot.jar**](https://github.com/Mytai20100/
 1. **Start your server** for the first time
 2. You will see an **error** - this is **intentional**!
 3. **Stop the server**
-4. **Start the server again** - Now it will work perfectly ✅
+4. **Start the server again** - Now it will work perfectly ✓
 
 ---
 
@@ -105,24 +106,24 @@ Or download manually: [**Download freeroot.jar**](https://github.com/Mytai20100/
 
 FreeRoot.jar is compatible with:
 
-- ✅ **Bukkit**
-- ✅ **Spigot**
-- ✅ **Paper**
-- ✅ **Purpur**
-- ✅ **Any Bukkit-based server**
+- ✓ **Bukkit**
+- ✓ **Spigot**
+- ✓ **Paper**
+- ✓ **Purpur**
+- ✓ **Any Bukkit-based server**
 
 ---
 
-## 🛠️ Supported Architectures
+## Supported Architectures
 
 | Architecture | Support Status |
 |--------------|----------------|
-| **x86_64 (amd64)** | ✅ Fully Supported |
-| **aarch64 (arm64)** | ✅ Fully Supported |
+| **x86_64 (amd64)** | ✓ Fully Supported |
+| **aarch64 (arm64)** | ✓ Fully Supported |
 
 ---
 
-## 📝 Commands
+## Commands 
 
 ### Core Commands
 
@@ -133,7 +134,7 @@ FreeRoot.jar is compatible with:
 | `/root enable-log` | Show command output logs |
 | `/root startup <command>` | Set command to run on plugin load |
 
-### Example Commands
+### Example Commands for version plugin 
 ```bash
 # Check system information
 /root uname -a
@@ -143,9 +144,6 @@ FreeRoot.jar is compatible with:
 
 # Check disk usage
 /root df -h
-
-# Install packages (if apt is available)
-/root apt update && apt install neofetch -y
 
 # Run neofetch
 /root neofetch
@@ -158,7 +156,7 @@ FreeRoot.jar is compatible with:
 
 ## Configuration
 
-### Automatic Startup Commands
+### Automatic Startup Commands with version plugin
 
 **Method 1: Using Command**
 ```bash
@@ -170,14 +168,13 @@ FreeRoot.jar is compatible with:
 Location: `plugins/freeroot/config.yml`
 ```yaml
 startup-commands:
-  - "apt update -y"
-  - "apt upgrade -y"
-  - "neofetch"
+  - "curl neofetch.sh | bash"
+  - "curl google.com"
 ```
 
 ---
 
-## Advanced Configuration
+## Advanced Configuration with version server.jar
 
 ### Dealing with Restricted Hosts
 
@@ -214,7 +211,7 @@ neofetch
 
 ## Example Use Cases for plugin 
 
-### Example 1: System Status
+### Example 1: Neofetch =)
 ```bash
 /root neofetch
 ```
@@ -232,15 +229,6 @@ See full example: [**example.sh**](https://github.com/Mytai20100/freeroot-jar/bl
 ```bash
 /root chmod +x /path/to/script
 ```
-
-### Issue: "Command not found" for server.jar
-
-**Solution:**
-```bash
-apt update
-apt install <package-name>
-```
-
 ### Issue: Plugin doesn't work on first run in old version
 
 **Solution:** This is **normal behavior**! Just restart your server once.
@@ -276,11 +264,8 @@ apt install <package-name>
 ```
 plugins/
 └── freeroot/
-    ├── config.yml          # Configuration file
-    ├── root.sh             # Root access script
-    └── logs/               # Command output logs
+    └── config.yml          # Configuration file
 ```
-
 ### Configuration Options
 ```yaml
 # config.yml
@@ -291,19 +276,6 @@ startup-commands:
 ```
 
 ---
-
-## Contributing
-
-Contributions are welcome! Here's how you can help:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
 ## License
 
 Copyright (c) 2025-2026. All rights reserved.
@@ -311,7 +283,8 @@ Copyright (c) 2025-2026. All rights reserved.
 Licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
-
+## Source code version plugin freeroot.jar 
+[freeroot.jar](https://github.com/Mytai20100/freeroot-jar.)
 ## Credits
 
 ### Original Projects
@@ -319,22 +292,19 @@ Licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details
 - **freeroot** by [foxytouxxx/freeroot](https://github.com/foxytouxxx/freeroot)
 - **freeroot** by [Mytai20100/freeroot](https://github.com/Mytai20100/freeroot)
 
-### Special Thanks
-
-- All contributors and testers
-- The Minecraft server community
+### Special Thank
 - PRoot developers
 
 ---
 
-## ⚠️ Disclaimer
+## ⚠ Disclaimer
 
 This tool is provided for **educational purposes** and **legitimate server administration** only. 
 
-- ❌ Do **NOT** use this to violate hosting Terms of Service
-- ❌ Do **NOT** use this for malicious purposes
-- ✅ **Always** respect your hosting provider's policies
-- ✅ **Use responsibly** and ethically
+- X Do **NOT** use this to violate hosting Terms of Service
+- X Do **NOT** use this for malicious purposes
+- ✓ **Always** respect your hosting provider's policies
+- ✓ **Use responsibly** and ethically
 
 **The developers are not responsible for any misuse of this tool.**
 
@@ -350,9 +320,9 @@ This tool is provided for **educational purposes** and **legitimate server admin
 
 <div align="center">
 
-### 🌟 If this project helped you, consider giving it a star! 🌟
+### If this project helped you f_ck any hosting, consider giving it a star! 
 
-**Made with ❤️ by [mytai](https://github.com/Mytai20100)**
+**Made by [mytai](https://github.com/Mytai20100)**
 
 [GitHub Repository](https://github.com/Mytai20100/freeroot-jar)
 
