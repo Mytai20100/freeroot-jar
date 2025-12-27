@@ -37,7 +37,7 @@ FreeRoot.jar is a powerful tool that allows you to bypass Minecraft hosting rest
 - **Multi-Server Support**: Works with Bukkit, Paper, Spigot, and more
 - **Log Management**: Hide/show command output logs
 - **Startup Commands**: Auto-execute commands on plugin load
-- **Restricted Host Support**: Works even on heavily restricted hosting environments
+- **Restricted Host Support**: Works even on heavily restricted hosting environments 
 
 ---
 
