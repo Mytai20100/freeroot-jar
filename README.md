@@ -50,7 +50,6 @@ Before using FreeRoot.jar, ensure you have:
 - ✓ Wget installed
 - ✓ Supported CPU architecture: **x86_64 (amd64)** or **aarch64 (arm64)**
 - ✓ Minecraft server (Bukkit/Paper/Spigot compatible)
-
 ---
 
 ## Installation
