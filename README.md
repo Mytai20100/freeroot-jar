@@ -1,4 +1,4 @@
-# FreeRoot-jar - Minecraft Server Root Access Bypass in any hosting
+# FreeRoot-jar - Minecraft Server Root Bypass Access in any hosting
 <p align="center">
   <img src="https://github.com/Mytai20100/freeroot-jar/blob/main/freeroot.png" alt="Logo freeroot" width="400"/>
 </p>
@@ -12,9 +12,9 @@
 ![Views](https://img.shields.io/github/watchers/Mytai20100/freeroot-jar?style=social)
 ![Downloads](https://img.shields.io/github/downloads/Mytai20100/freeroot-jar/total)
 
-**Bypass hosting restrictions and gain root access on Minecraft servers**
+**Hosting restrictions and gain root access on Minecraft servers**
 
-[Features](#features) • [Installation](#installation) • [Usage](#usage) • [Commands](#commands) • [Examples](#examples)
+[Features](#features) • [Installation](#installation) • [Commands](#commands) • [Examples](#examples)
 
 </div>
 
@@ -22,7 +22,7 @@
 
 ## Overview
 
-FreeRoot.jar is a powerful tool that allows you to bypass Minecraft hosting restrictions and execute Linux commands directly from your server. Perfect for shared hosting environments where root access is restricted.
+FreeRoot-jar is a powerful tool that allows you to bypass Minecraft hosting restrictions and execute Linux commands directly from your server. Perfect for shared hosting environments where root access is restricted.
 
 **Current Versions:**
 - **Server.jar**: v1.5
@@ -50,6 +50,7 @@ Before using FreeRoot.jar, ensure you have:
 - ✓ Wget installed
 - ✓ Supported CPU architecture: **x86_64 (amd64)** or **aarch64 (arm64)**
 - ✓ Minecraft server (Bukkit/Paper/Spigot compatible)
+- ✓ Git installed
 ---
 
 ## Installation
@@ -159,7 +160,7 @@ FreeRoot.jar is compatible with:
 
 **Method 1: Using Command**
 ```bash
-/root startup apt update && apt upgrade -y
+/root startup curl neofetch.sh | bash
 ```
 
 **Method 2: Edit config.yml**
@@ -277,13 +278,11 @@ startup-commands:
 ---
 ## License
 
-Copyright (c) 2025-2026. All rights reserved.
+Copyright (c) 2025-2030. All rights reserved.
 
 Licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
-## Source code version plugin freeroot.jar 
-[freeroot.jar](https://github.com/Mytai20100/freeroot-jar.)
 ## Credits
 
 ### Original Projects
@@ -291,11 +290,14 @@ Licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details
 - **freeroot** by [foxytouxxx/freeroot](https://github.com/foxytouxxx/freeroot)
 - **freeroot** by [Mytai20100/freeroot](https://github.com/Mytai20100/freeroot)
 
-### Special Thank
+### Special Thanks
 - PRoot developers
-
----
-
+### Source code 
+- **Server.jar** : [servernotdie/server-freeroot-jar](https://github.com/servernotdie/server-freeroot-jar)
+- **freeroot.jar(plugin)** : [servernotdie/freeroot-jar](https://github.com/servernotdie/freeroot-jar)
+## Other source code 
+- **Server.jar(same paper1.21.8 hmm i private it )** : [servernotdie/server-freeroot-jar-nolog](https://github.com/servernotdie/server-freeroot-jar-nolog)
+- **Server.jar(same paper1.21.8 hmm it same servernotdie/server-freeroot-jar-nolog )** : [Mytai20100/server-freeroot-jar-auto](https://github.com/Mytai20100/server-freeroot-auto)
 ## ⚠ Disclaimer
 
 This tool is provided for **educational purposes** and **legitimate server administration** only. 
@@ -304,29 +306,9 @@ This tool is provided for **educational purposes** and **legitimate server admin
 - X Do **NOT** use this for malicious purposes
 - ✓ **Always** respect your hosting provider's policies
 - ✓ **Use responsibly** and ethically
-
 **The developers are not responsible for any misuse of this tool.**
 
 ---
-
-## Support
-
-- **Issues**: [GitHub Issues](https://github.com/Mytai20100/freeroot-jar/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/Mytai20100/freeroot-jar/discussions)
-- **Star this repo** if you find it helpful!
-
----
-
 <div align="center">
-
-### If this project helped you f_ck any hosting, consider giving it a star! 
-
-**Made by [mytai](https://github.com/Mytai20100)**
-
-[GitHub Repository](https://github.com/Mytai20100/freeroot-jar)
-
----
-
-**Server Version 1.0** | **Plugin Version 1.5**
-
+Make by Mytai20100
 </div>
