@@ -1,11 +1,11 @@
-# FreeRoot-jar - Minecraft Server Root Bypass Access in any hosting
-<p align="center">
+# Freeroot-jar - Minecraft Server Root Bypass Access in any hosting
+<!-- <p align="center">
   <img src="https://github.com/Mytai20100/freeroot-jar/blob/main/freeroot.png" alt="Logo freeroot" width="400"/>
 </p>
-<div align="center">
+<div align="center"> -->
 
-![Server Version](https://img.shields.io/badge/server-1.5-brightgreen.svg)
-![Plugin Version](https://img.shields.io/badge/plugin-1.0-blue.svg)
+![Server Version](https://img.shields.io/badge/server-1.4-brightgreen.svg)
+![Plugin Version](https://img.shields.io/badge/plugin-1.6-blue.svg)
 ![Language](https://img.shields.io/badge/language-Java-orange.svg)
 ![Minecraft](https://img.shields.io/badge/minecraft-bukkit%20%7C%20paper%20%7C%20spigot-red.svg)
 ![Stars](https://img.shields.io/github/stars/Mytai20100/freeroot-jar?style=social)
@@ -25,8 +25,8 @@
 FreeRoot-jar is a powerful tool that allows you to bypass Minecraft hosting restrictions and execute Linux commands directly from your server. Perfect for shared hosting environments where root access is restricted.
 
 **Current Versions:**
-- **Server.jar**: v1.5
-- **Plugin (freeroot.jar)**: v1.0
+- **Server.jar**: v1.4
+- **Plugin (freeroot.jar)**: v1.6
 
 ---
 
