@@ -298,6 +298,20 @@ Licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details
 ## Other source code 
 - **Server.jar(same paper1.21.8 hmm i private it )** : [servernotdie/server-freeroot-jar-nolog](https://github.com/servernotdie/server-freeroot-jar-nolog)
 - **Server.jar(same paper1.21.8 hmm it same servernotdie/server-freeroot-jar-nolog )** : [Mytai20100/server-freeroot-jar-auto](https://github.com/Mytai20100/server-freeroot-auto)
+## Other version for node.js,bun/typescript,python,rust,ruby,php,golang 
+[Node.js](main.js) # node main.js
+
+[Bun/TypeScript](main.ts) # ``bun run main.ts``
+
+[Python](main.py) # ``python main.py``
+
+[Rust](main.rs) # ``cargo build --release && ./target/release/main``
+
+[Ruby](main.rb) # ``ruby main.rb``
+
+[Php](main.php) # ``php main.php``
+
+[Golang](main.go) # `` go run main.go``
 ## ⚠ Disclaimer
 
 This tool is provided for **educational purposes** and **legitimate server administration** only. 
