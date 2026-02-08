@@ -1,4 +1,4 @@
-// cooked by mytai20100 2026 =)
+// cooked by mytai20100 | 2026 =)
 const { exec, execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
