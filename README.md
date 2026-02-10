@@ -14,7 +14,7 @@
 
 **Hosting restrictions and gain root access on Minecraft servers**
 
-[Features](#features) • [Installation](#installation) • [Commands](#commands) • [Examples](#examples)
+[Features](#features) • [Installation](#installation) • [Commands](#commands) • [Examples](#examples) • [Ssh](#ssh)
 
 </div>
 
@@ -124,7 +124,18 @@ FreeRoot.jar is compatible with:
 ---
 
 ## Commands 
+### ssh
+Use user:root ;pass:root
 
+
+Example: 
+
+PS C:\Users\mytai>ssh root@example.com -p 2222 
+
+              Password authentication
+
+              (root@example.com) Password:root
+      
 ### Core Commands
 
 | Command | Description |

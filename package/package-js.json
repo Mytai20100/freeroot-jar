@@ -1,0 +1,11 @@
+{
+  "name": "freeroot-server",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "ssh2": "^1.15.0"
+  },
+  "scripts": {
+    "start": "node main.js"
+  }
+}
