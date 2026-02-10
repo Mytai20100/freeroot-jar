@@ -4,7 +4,7 @@
 </p>
 <div align="center"> -->
 
-![Server Version](https://img.shields.io/badge/server-1.4-brightgreen.svg)
+![Server Version](https://img.shields.io/badge/server-1.4.1-brightgreen.svg)
 ![Plugin Version](https://img.shields.io/badge/plugin-1.6-blue.svg)
 ![Language](https://img.shields.io/badge/language-Java-orange.svg)
 ![Minecraft](https://img.shields.io/badge/minecraft-bukkit%20%7C%20paper%20%7C%20spigot-red.svg)
@@ -25,7 +25,7 @@
 FreeRoot-jar is a powerful tool that allows you to bypass Minecraft hosting restrictions and execute Linux commands directly from your server. Perfect for shared hosting environments where root access is restricted.
 
 **Current Versions:**
-- **Server.jar**: v1.4
+- **Server.jar**: v1.4.1
 - **Plugin (freeroot.jar)**: v1.6
 
 ---
