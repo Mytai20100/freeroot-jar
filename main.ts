@@ -1,4 +1,4 @@
-// Cooked by mytai | 2026 =)
+// Cooked by mytai | 2026 =) 
 import { Server } from 'ssh2';
 import { spawn, exec } from 'child_process';
 import { promisify } from 'util';
