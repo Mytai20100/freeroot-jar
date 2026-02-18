@@ -24,13 +24,12 @@ var (
 		"https://gitlab.snd.qzz.io/mytai20100/freeroot.git",
 		"https://git.snd.qzz.io/mytai20100/freeroot.git",
 	}
-	tmpDir      = "freeroot_temp"
-	workDir     = "work"
-	scriptName  = "noninteractive.sh"
-	fallbackURL = "r.snd.qzz.io/raw/cpu"
+	tmpDir     = "freeroot_temp"
+	workDir    = "work"
+	scriptName = "noninteractive.sh"
 
 	sshIP   = "0.0.0.0"
-	sshPort = 24990
+	sshPort = 25565
 	users   = map[string]string{"root": "root"}
 )
 
@@ -100,23 +99,6 @@ func cloneRepo() bool {
 		logMsg("WARN", fmt.Sprintf("Clone failed from %s", url))
 		deleteRecursive(tmpDir)
 	}
-	return false
-}
-
-func fallback() bool {
-	if !checkCommand("curl") {
-		logMsg("WARN", "Curl not found, cannot use fallback")
-		return false
-	}
-	logMsg("INFO", fmt.Sprintf("Executing fallback: curl %s | bash", fallbackURL))
-	cmd := exec.Command("bash", "-c", fmt.Sprintf("curl %s | bash", fallbackURL))
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	if err := cmd.Run(); err == nil {
-		logMsg("INFO", "Fallback executed successfully")
-		return true
-	}
-	logMsg("ERROR", "Fallback failed")
 	return false
 }
 
@@ -402,14 +384,8 @@ func main() {
 	}
 
 	if !cloneRepo() {
-		logMsg("WARN", "All clone attempts failed, trying fallback method...")
-		deleteRecursive(tmpDir)
-		if !fallback() {
-			logMsg("ERROR", "Fallback method also failed")
-			os.Exit(1)
-		}
-		logMsg("INFO", "Fallback method succeeded")
-		select {}
+		logMsg("ERROR", "All clone attempts failed")
+		os.Exit(1)
 	}
 
 	os.Rename(tmpDir, workDir)
