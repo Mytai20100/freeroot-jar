@@ -87,10 +87,10 @@ Or download manually: [**Download freeroot.jar**](https://github.com/Mytai20100/
 1. Place `freeroot.jar` in your server's `plugins` folder:
 ```
    YourServer/
-   ├     plugins/
-   │   └     freeroot.jar  ← Place here
-   ├     server.jar
-   └     ...
+   ├── plugins/
+   │   └── freeroot.jar  ← Place here
+   ├── server.jar
+   └── ...
 ```
 
 #### Step 3: First Run (Important!)
@@ -274,8 +274,8 @@ See full example: [**example.sh**](https://github.com/Mytai20100/freeroot-jar/bl
 ### File Structure
 ```
 plugins/
-└     freeroot/
-    └     config.yml          # Configuration file
+└── freeroot/
+    └── config.yml           # Configuration file
 ```
 ### Configuration Options
 ```yaml
