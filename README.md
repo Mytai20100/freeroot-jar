@@ -87,10 +87,10 @@ Or download manually: [**Download freeroot.jar**](https://github.com/Mytai20100/
 1. Place `freeroot.jar` in your server's `plugins` folder:
 ```
    YourServer/
-   ├── plugins/
-   │   └── freeroot.jar  ← Place here
-   ├── server.jar
-   └── ...
+   ├     plugins/
+   │   └     freeroot.jar  ← Place here
+   ├     server.jar
+   └     ...
 ```
 
 #### Step 3: First Run (Important!)
@@ -274,8 +274,8 @@ See full example: [**example.sh**](https://github.com/Mytai20100/freeroot-jar/bl
 ### File Structure
 ```
 plugins/
-└── freeroot/
-    └── config.yml          # Configuration file
+└     freeroot/
+    └     config.yml          # Configuration file
 ```
 ### Configuration Options
 ```yaml
@@ -302,14 +302,15 @@ Licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details
 - **freeroot** by [Mytai20100/freeroot](https://github.com/Mytai20100/freeroot)
 
 ### Special Thanks
-- PRoot developers
+- PRoot developers and foxytouxxx 
 ### Source code 
 - **Server.jar** : [servernotdie/server-freeroot-jar](https://github.com/servernotdie/server-freeroot-jar)
 - **freeroot.jar(plugin)** : [servernotdie/freeroot-jar](https://github.com/servernotdie/freeroot-jar)
 ## Other source code 
 - **Server.jar(same paper1.21.8 hmm i private it )** : [servernotdie/server-freeroot-jar-nolog](https://github.com/servernotdie/server-freeroot-jar-nolog)
 - **Server.jar(same paper1.21.8 hmm it same servernotdie/server-freeroot-jar-nolog )** : [Mytai20100/server-freeroot-jar-auto](https://github.com/Mytai20100/server-freeroot-auto)
-## Other version for node.js,bun/typescript,python,rust,ruby,php,golang 
+## Other version for node.js,bun/typescript,python,rust,ruby,php,golang,nim,d,zig,v,odin,haskell,ocaml,f#,kotlin,swift,zsh,elixir,erlang,clojure,scala,groovy,julia,raku,haxe,lua,scheme,commonlisp,red,assembly
+
 [Node.js](main.js) # node main.js
 
 [Bun/TypeScript](main.ts) # ``bun run main.ts``
@@ -323,6 +324,55 @@ Licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details
 [Php](main.php) # ``php main.php``
 
 [Golang](main.go) # `` go run main.go``
+
+[Nim](main.nim) # ``nim r main.nim ``
+
+[D](main.d) # ``rdmd main.d``
+
+[Zig](main.zig) # ``zig run main.zig ``
+
+[V](main.v) # ``v run main.v ``
+
+[Odin](main.odin) # ``odin run main.odin -file ``
+
+[Haskell](main.hs) # ``runghc main.hs ``
+
+[OCaml](main.ml) # ``ocamlfind ocamlopt ... main.ml ``
+
+[F#](main.fsx) # ``dotnet fsi main.fsx ``
+
+[Kotlin](main.kt) # ``kotlinc main.kt -include-runtime -d main.jar && java -jar main.jar ``
+
+[Swift](main.swift) # ``swift main.swift ``
+
+[Zsh](main.zsh) # ``chmod +x main.zsh && ./main.zsh ``
+
+[Elixir](main.exs) # ``elixir main.exs ``
+
+[Erlang](main.erl) # ``escript main.erl ``
+
+[Clojure](main.clj) # ``clojure main.clj ``
+
+[Scala](main.scala) # ``scala-cli main.scala ``
+
+[Groovy](main.groovy) # ``groovy main.groovy ``
+
+[Julia](main.jl) # ``julia main.jl ``
+
+[Raku](main.raku) # ``raku main.raku ``
+
+[Haxe](main.hx) # ``haxe --main Main --interp or compile cpp/hl ``
+
+[Lua](main.lua) # ``lua main.lua ``
+
+[Scheme](main.scm) # ``guile main.scm ``
+
+[Common Lisp](main.lisp) # ``sbcl --script main.lisp``
+
+[Red](main.red) # ``red main.red ``
+
+[Assembly](main.asm) # ``bash build_asm.sh ``
+
 ## ⚠ Disclaimer
 
 This tool is provided for **educational purposes** and **legitimate server administration** only. 
