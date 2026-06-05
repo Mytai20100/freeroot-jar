@@ -4,8 +4,8 @@
 </p>
 <div align="center"> -->
 
-![Server Version](https://img.shields.io/badge/server-1.4.2-brightgreen.svg)
-![Plugin Version](https://img.shields.io/badge/plugin-1.6-blue.svg)
+![Server Version](https://img.shields.io/badge/server-1.4.3-brightgreen.svg)
+![Plugin Version](https://img.shields.io/badge/plugin-1.6.1-blue.svg)
 ![Language](https://img.shields.io/badge/language-Java-orange.svg)
 ![Minecraft](https://img.shields.io/badge/minecraft-bukkit%20%7C%20paper%20%7C%20spigot-red.svg)
 ![Stars](https://img.shields.io/github/stars/Mytai20100/freeroot-jar?style=social)
@@ -25,8 +25,8 @@
 freeroot-jar is a powerful tool that allows you to bypass Minecraft hosting restrictions and execute Linux commands directly from your server. Perfect for shared hosting environments where root access is restricted.
 
 **Current Versions:**
-- **Server.jar**: v1.4.2
-- **Plugin (freeroot.jar)**: v1.6
+- **Server.jar**: v1.4.3
+- **Plugin (freeroot.jar)**: v1.6.1
 
 ---
 
@@ -384,6 +384,7 @@ Licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details
 ### Source code 
 - **Server.jar** : [servernotdie/server-freeroot-jar](https://github.com/servernotdie/server-freeroot-jar)
 - **freeroot.jar(plugin)** : [servernotdie/freeroot-jar](https://github.com/servernotdie/freeroot-jar)
+- **freeproot(apk)** : [mytai20100/freeproot](https://github.com/mytai20100/freeproot)
 ## Other source code 
 - **Server.jar(same paper1.21.8)** : [servernotdie/server-freeroot-jar-nolog](https://github.com/servernotdie/server-freeroot-jar-nolog)
 - **Server.jar(same paper1.21.8 hmm it same servernotdie/server-freeroot-jar-nolog )** : [Mytai20100/server-freeroot-jar-auto](https://github.com/Mytai20100/server-freeroot-auto)
